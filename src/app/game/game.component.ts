@@ -5,6 +5,7 @@ import { PlayerComponent } from '../player/player.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogueAddPlayerComponent } from '../dialogue-add-player/dialogue-add-player.component';
 
 @Component({
     selector: 'app-game',
@@ -42,13 +43,12 @@ export class GameComponent {
     }
 
     openDialog(): void {
-        const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-            data: { name: this.name, animal: this.animal },
-        });
+        const dialogRef = this.dialog.open(DialogueAddPlayerComponent);
 
-        dialogRef.afterClosed().subscribe((result) => {
-            console.log('The dialog was closed');
-            this.animal = result;
+        dialogRef.afterClosed().subscribe((name: string) => {
+            if (name != '') {
+                this.game.players.push(name);
+            }
         });
     }
 }
