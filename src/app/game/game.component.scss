@@ -18,12 +18,14 @@
 
 .card-stack {
     position: relative;
-    width: 120px;
-    height: 180px;
+    margin-top: 200px;
+    margin-right: 100px;
+    width: 140px;
+    height: 200px;
 
     > img {
         position: absolute;
-        width: 120px;
+        width: 140px;
     }
 }
 
@@ -78,4 +80,11 @@
     position: absolute;
     bottom: 32px;
     left: 32px;
+}
+
+.pin-bottom {
+    position: absolute;
+    bottom: 30px;
+    left: 100px;
+    right: 100px;
 }
