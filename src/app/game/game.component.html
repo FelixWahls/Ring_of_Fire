@@ -13,24 +13,20 @@
         <img
             *ngFor="let c of [0, 1, 2, 3]; let i = index"
             [ngStyle]="{ 'left.px': i * 3 }"
-            src="./../../assets/img/cards/card_cover.png"
+            src="assets/img/cards/card_cover.png"
             alt=""
         />
         <img
             (click)="takeCard()"
             class="top-card"
             style="left: 12px"
-            src="./../../assets/img/cards/card_cover.png"
+            src="assets/img/cards/card_cover.png"
             alt=""
         />
 
         <!-- Stack of played Cards -->
         @for (card of game.playedCards; track $index) {
-        <img
-            src="./../../assets/img/cards/{{ card }}.png"
-            alt=""
-            class="played-card"
-        />
+        <img src="assets/img/cards/{{ card }}.png" alt="" class="played-card" />
         }
 
         <!-- current card (animation) -->
@@ -39,7 +35,7 @@
             *ngIf="pickCardAnimation"
             class="pick-card"
             style="left: 12px"
-            src="./../../assets/img/cards/{{ currentCard }}.png"
+            src="assets/img/cards/{{ currentCard }}.png"
             alt=""
         />
     </div>
